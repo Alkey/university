@@ -8,7 +8,7 @@ import java.util.Scanner;
 @RequiredArgsConstructor
 @Component
 public class MenuConsole {
-    private static final String GREETINGS = "Hello, please choose command: "
+    private static final String GREETINGS = "\n Please choose command: "
             + "\n 1. Enter \"Who is head of department {department_name}\""
             + "\n 2. Enter \"Show {department_name} statistics\""
             + "\n 3. Enter \"Show the average salary for the department {department_name}\""

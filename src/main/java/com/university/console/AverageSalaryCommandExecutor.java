@@ -3,6 +3,7 @@ package com.university.console;
 import com.university.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.util.Optional;
 
@@ -15,7 +16,7 @@ public class AverageSalaryCommandExecutor implements ConsoleCommandExecutor {
 
     @Override
     public void executeCommand(String command) {
-        String name = command.replace(AVERAGE_SALARY, "").trim();
+        String name = StringUtils.capitalize(command.replace(AVERAGE_SALARY, "").trim().toLowerCase());
         Optional.ofNullable(service.getAverageSalary(name)).ifPresentOrElse(
                 d -> System.out.println("The average salary of " + name + " is " + d),
                 () -> System.out.println("Incorrect name of department " + name)
